@@ -4,7 +4,7 @@ Freiberufler/Selbständige können mit der Vorlage eine HTML/PDF Rechnung erstel
 
 * http://codepen.io/nikolayhg/pen/oXegzM
 
-Full-page demo: http://s.codepen.io/nikolayhg/debug/oXegzM?
+Full-page demo: http://s.codepen.io/nikolayhg/debug/oXegzM
 
 ## Informieren
 
