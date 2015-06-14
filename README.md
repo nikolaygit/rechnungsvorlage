@@ -1,10 +1,10 @@
-# rechnungsvorlage
-HTML Vorlage für Rechnungen
+# Rechnungsvorlage
+HTML Rechnungsvorlage für Freiberufler / Selbständige
 
 * http://codepen.io/nikolayhg/pen/oXegzM
 
 
-Roadmap:
+## Roadmap
 
 * Move the codepen into the Git repo.
 * Iterate according to own and friends needs.
