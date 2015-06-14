@@ -1,8 +1,14 @@
 # Rechnungsvorlage
-HTML Rechnungsvorlage für Freiberufler / Selbständige
+
+Freiberufler/Selbständige können mit der Vorlage eine HTML/PDF Rechnung erstellen.
 
 * http://codepen.io/nikolayhg/pen/oXegzM
 
+## Features
+
+* Data as JS objects
+* Livereload of data
+* Print to PDF
 
 ## Roadmap
 
