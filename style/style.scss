@@ -1,0 +1,140 @@
+$one-row-height: 20px;
+$font-size: 14px;
+$font-size-small: 12px;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: rgb(204,204,204);
+}
+// Format:
+// http://www.edv-lehrgang.de/aufbau-bewerbungsanschreiben/
+// http://upload.wikimedia.org/wikipedia/commons/6/64/DIN_5008%2C_Form_A.svg
+page[size="A4"] {
+  background: white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  width: 21cm;
+  height: 29.7cm;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  padding: 1.69cm 1cm 1.69cm 2cm;
+  font-size: $font-size;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+@media print {
+  body, page[size="A4"] {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+
+.one-row-top {
+  padding-top: $one-row-height;
+}
+.floatl {
+  float: left;
+}
+.floatr {
+  float: right;
+}
+.bold {
+  font-weight: bold;
+}
+.container:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.seller {
+  float: right;
+}
+.section {
+  padding-bottom: 20px;
+}
+.client {
+  float: left;
+  margin-top: 2.7cm;
+  height: 4.5cm;
+}
+.client--seller-address {
+  margin-top: 1.27cm;
+  height: .5cm;
+  font-size: $font-size-small;
+  color: #525252;
+}
+
+.invoice {
+  flex: 1;
+}
+.invoice-meta {
+  margin-top: 2.4cm;
+  h1 {
+    margin-top: 0px;
+  }
+}
+
+.field--data {
+  font-weight: bold;
+}
+.field--text {
+  font-size: $font-size-small;
+}
+.invoice-text {
+  padding-top: $one-row-height * 1.5;
+  clear: both;
+}
+
+.invoice-table {
+  margin-top: $one-row-height;
+}
+.table-row {
+  width: 100%;
+  clear: both;
+  > div {
+    float: left;
+  }
+}
+.invoice-table--headers {
+  margin-bottom: 10px;
+}
+.table-header {
+  font-weight: bold;
+}
+.table-col-1 {
+  width: 7%;
+}
+.table-col-2 {
+  width: 35%;
+}
+.table-col-3 {
+  width: 12%;
+  text-align: right;
+}
+.table-col-4 {
+  width: 11%;
+  text-align: right;
+}
+.table-col-5 {
+  width: 16%;
+  text-align: right;
+}
+.table-col-12345 {
+  width: 81%;
+  text-align: right;
+}
+.table-col-6 {
+  width: 18%;
+  text-align: right;
+}
+.col-25 {
+  float: left;
+  width: 27%;
+}
+.col-45 {
+  float: left;
+  width: 45%;
+}

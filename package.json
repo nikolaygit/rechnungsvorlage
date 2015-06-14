@@ -1,0 +1,32 @@
+{
+  "name": "rechnungsvorlage",
+  "version": "0.0.1",
+  "description": "Rechnungsvorlage für Freiberufler/Selbständige",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolaygit/rechnungsvorlage.git"
+  },
+  "keywords": [
+    "rechnung",
+    "vorlage",
+    "freiberufer",
+    "selbständig",
+    "freelance"
+  ],
+  "author": "Nikolay Georgiev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikolaygit/rechnungsvorlage/issues"
+  },
+  "homepage": "https://github.com/nikolaygit/rechnungsvorlage#readme",
+  "devDependencies": {
+    "jscs": "^1.13.1",
+    "jshint": "^2.8.0",
+    "live-reload": "latest"
+  },
+  "scripts": {
+    "livereload": "live-reload --port 9091 ./",
+    "scss": "scss --watch ./:./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

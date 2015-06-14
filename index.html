@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Rechnungsvorlage für Freiberufler / Selbständige</title>
+  <link rel="stylesheet" href="style/style.css"/>
+  <script src="bower_components/dustjs-linkedin/dist/dust-full.min.js"></script>
+</head>
+<body>
+
+<page size="A4" id="rechnungsvorlage">
+
+  <header class="container">
+
+    <div class="seller">
+      <div class="section">
+        <div>{seller.personName}</div>
+        <div>{seller.address.streerNr}</div>
+        <div>{seller.address.place}</div>
+      </div>
+      <div class="section">
+        <div>Tel.: {seller.contacts.phone}</div>
+        <div>E-Mail: {seller.contacts.email}</div>
+        <div>Web: {seller.contacts.web}</div>
+      </div>
+    </div>
+
+    <div class="client">
+      <div class="client--seller-address">
+        {seller.personName}, {seller.address.streerNr}, {seller.address.place}
+      </div>
+      <div class="client--address">
+        <div>{client.companyName}</div>
+        <div>{client.address.streerNr}</div>
+        <div>{client.address.place}</div>
+      </div>
+    </div>
+  </header>
+
+  <article class="invoice container">
+    {#invoice}
+
+    <section class="invoice-meta">
+      <div class="floatr">
+        <div>Ausstellungsdatum: {invoiceDate}</div>
+      </div>
+      <div class="floatl">
+        <div>
+          <div class="field--data">Rechnungs Nr. {invoiceNr}</div>
+          <div class="field--text">Bitte bei Zahlungen und Schriftverkehr angeben!</div>
+        </div>
+        <div>
+          <div class="field--data one-row-top">Leistungszeitraum: {achievementPeriod}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="invoice-text">{textBefore}</section>
+
+    <section class="invoice-table">
+      <div class="table-row invoice-table--headers container">
+        <div class="table-header table-col-1">Pos.</div>
+        <div class="table-header table-col-2">Beschreibung</div>
+        <div class="table-header table-col-3">Menge</div>
+        <div class="table-header table-col-4">Einheit</div>
+        <div class="table-header table-col-5">Einzelpreis</div>
+        <div class="table-header table-col-6">Gesamtpreis</div>
+      </div>
+      {#positions}
+      <div class="table-row">
+        <div class="table-col-1">{id}</div>
+        <div class="table-col-2">{description}</div>
+        <div class="table-col-3">{count}</div>
+        <div class="table-col-4">{countType}</div>
+        <div class="table-col-5">{unitPrice} €</div>
+        <div class="table-col-6">{totalPrice} €</div>
+      </div>
+      {/positions}
+      <div class="table-row one-row-top">
+        <div class="table-col-12345">Zwischensumme</div>
+        <div class="table-col-6">{priceNetto} €</div>
+      </div>
+      <div class="table-row">
+        <div class="table-col-12345">+19% MwSt.</div>
+        <div class="table-col-6">{priceMwSt} €</div>
+      </div>
+      <div class="table-row">
+        <div class="table-col-12345 bold">Rechnungsbetrag</div>
+        <div class="table-col-6 bold">{priceBrutto} €</div>
+      </div>
+    </section>
+
+    <section class="invoice-text">{textAfter}</section>
+
+    {/invoice}
+  </article>
+
+  <footer>
+    <div class="col-25">
+      <div>{seller.personName}</div>
+      <div>{seller.address.streerNr}</div>
+      <div>{seller.address.place}</div>
+    </div>
+    <div class="col-45">
+      <div>IBAN: {seller.bankAccount.iban}</div>
+      <div>BIC: {seller.bankAccount.bic}</div>
+      <div>{seller.bankAccount.bankName}</div>
+    </div>
+    <div>
+      <div>USt-IdNr. {seller.ustid}</div>
+    </div>
+  </footer>
+
+</page>
+
+<script src="scripts/main.js"></script>
+<script src="//localhost:9091"></script>
+</body>
+</html>
