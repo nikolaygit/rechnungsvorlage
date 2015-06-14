@@ -6,6 +6,10 @@ Freiberufler/Selbständige können mit der Vorlage eine HTML/PDF Rechnung erstel
 
 Full-page demo: http://codepen.io/nikolayhg/full/oXegzM/
 
+## Informieren
+
+Sie können sich hier mehr über Rechnungen informieren: https://github.com/nikolaygit/freiberufler/blob/master/rechnungen/Rechnungen.md
+
 ## Features
 
 * Data as JS objects
@@ -16,3 +20,4 @@ Full-page demo: http://codepen.io/nikolayhg/full/oXegzM/
 
 * Move the codepen into the Git repo.
 * Iterate according to own and friends needs.
+
