@@ -1,0 +1,49 @@
+{
+  "seller": {
+    "companyName": "My Company",
+    "personName": "Nikolay Georgiev",
+    "ustid": "DE123455677",
+    "address": {
+      "streerNr": "MeineStraße. 15",
+      "place": "10969 Berlin"
+    },
+    "contacts": {
+      "phone": "+49 176 12345678",
+      "email": "nikolay@georgiev.io",
+      "web": "georgiev.io"
+    },
+    "bankAccount": {
+      "iban": "DE3012309348059340346",
+      "bic": "GENODEM1GLS",
+      "bankName": "GLS Bank"
+    }
+  },
+  "client": {
+    "companyName": "Client GmbH",
+    "personName": "Client Name",
+    "address": {
+      "streerNr": "Clientstraße 11",
+      "place": "10677 Berlin"
+    }
+  },
+  "invoice": {
+    "invoiceNr": "1506-CLT-AA",
+    "achievementPeriod": "15.05.2015 - 30.05.2015",
+    "invoiceDate": "01.06.2015",
+    "textBefore": "Ich bedanke mich für die gute Zusammenarbeit und stelle Ihnen vereinbarungsgemäß folgende Leistungen in Rechnung.",
+    "textAfter": "Bitte überweisen Sie den Rechnungsbetrag ohne Abzüge unter Angabe der Rechnungsnummer auf das angegebene Bankkonto.",
+    "positions": [
+      {
+        "id": 1,
+        "description": "Bezeichnung",
+        "count": "80,75",
+        "countType": "Std.",
+        "unitPrice": "60",
+        "totalPrice": "4845,00"
+      }
+    ],
+    "priceNetto": "4845,00",
+    "priceMwSt": "920,55",
+    "priceBrutto": "5765,55"
+  }
+}
