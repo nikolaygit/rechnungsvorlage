@@ -1,6 +1,6 @@
 {
   "name": "rechnungsvorlage",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Rechnungsvorlage für Freiberufler/Selbständige",
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "live-reload": "latest"
   },
   "scripts": {
+    "postinstall": "bower install",
     "livereload": "live-reload --port 9091 ./",
     "scss": "scss --watch ./:./",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -36,14 +36,11 @@
       {
         "id": 1,
         "description": "Bezeichnung",
-        "count": "80,75",
+        "count": "80.75",
         "countType": "Std.",
         "unitPrice": "60",
-        "totalPrice": "4845,00"
+        "totalPrice": "4845.00"
       }
-    ],
-    "priceNetto": "4845,00",
-    "priceMwSt": "920,55",
-    "priceBrutto": "5765,55"
+    ]
   }
 }

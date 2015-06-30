@@ -11,7 +11,7 @@ body {
 // Format:
 // http://www.edv-lehrgang.de/aufbau-bewerbungsanschreiben/
 // http://upload.wikimedia.org/wikipedia/commons/6/64/DIN_5008%2C_Form_A.svg
-page[size="A4"] {
+.pageA4 {
   background: white;
   display: flex;
   min-height: 100vh;
@@ -25,7 +25,7 @@ page[size="A4"] {
   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
 }
 @media print {
-  body, page[size="A4"] {
+  body, .pageA4 {
     margin: 0;
     box-shadow: 0;
   }
@@ -73,7 +73,7 @@ page[size="A4"] {
 .invoice-meta {
   margin-top: 2.4cm;
   h1 {
-    margin-top: 0px;
+    margin-top: 0;
   }
 }
 

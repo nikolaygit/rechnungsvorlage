@@ -4,7 +4,7 @@
 body {
   background: #cccccc; }
 
-page[size="A4"] {
+.pageA4 {
   background: white;
   display: flex;
   min-height: 100vh;
@@ -18,7 +18,7 @@ page[size="A4"] {
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5); }
 
 @media print {
-  body, page[size="A4"] {
+  body, .pageA4 {
     margin: 0;
     box-shadow: 0; } }
 .one-row-top {
@@ -61,7 +61,7 @@ page[size="A4"] {
 .invoice-meta {
   margin-top: 2.4cm; }
   .invoice-meta h1 {
-    margin-top: 0px; }
+    margin-top: 0; }
 
 .field--data {
   font-weight: bold; }

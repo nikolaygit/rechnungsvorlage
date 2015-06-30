@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <title>Rechnungsvorlage für Freiberufler / Selbständige</title>
   <link rel="stylesheet" href="style/style.css"/>
+  <script src="bower_components/big.js/big.min.js"></script>
+  <script src="bower_components/lodash/lodash.min.js"></script>
   <script src="bower_components/dustjs-linkedin/dist/dust-full.min.js"></script>
 </head>
 <body>
 
-<page size="A4" id="rechnungsvorlage">
+<div id="rechnungsvorlage" class="pageA4">
 
   <header class="container">
 
@@ -70,23 +72,23 @@
       <div class="table-row">
         <div class="table-col-1">{id}</div>
         <div class="table-col-2">{description}</div>
-        <div class="table-col-3">{count}</div>
+        <div class="table-col-3">{count|deComma}</div>
         <div class="table-col-4">{countType}</div>
-        <div class="table-col-5">{unitPrice} €</div>
-        <div class="table-col-6">{totalPrice} €</div>
+        <div class="table-col-5">{unitPrice|deCurrency}</div>
+        <div class="table-col-6">{totalPrice|deCurrency}</div>
       </div>
       {/positions}
       <div class="table-row one-row-top">
         <div class="table-col-12345">Zwischensumme</div>
-        <div class="table-col-6">{priceNetto} €</div>
+        <div class="table-col-6">{priceNetto|deCurrency}</div>
       </div>
       <div class="table-row">
         <div class="table-col-12345">+19% MwSt.</div>
-        <div class="table-col-6">{priceMwSt} €</div>
+        <div class="table-col-6">{priceMwSt|deCurrency}</div>
       </div>
       <div class="table-row">
         <div class="table-col-12345 bold">Rechnungsbetrag</div>
-        <div class="table-col-6 bold">{priceBrutto} €</div>
+        <div class="table-col-6 bold">{priceBrutto|deCurrency}</div>
       </div>
     </section>
 
@@ -95,7 +97,7 @@
       <br/>
       Mit freundlichen Grüßen,<br/>
       <br/>
-      Nikolay Georgiev
+      {seller.personName}
     </section>
 
     {/invoice}
@@ -117,8 +119,9 @@
     </div>
   </footer>
 
-</page>
+</div>
 
+<script src="scripts/dustjs-extensions.js"></script>
 <script src="scripts/main.js"></script>
 <script src="//localhost:9091"></script>
 </body>
