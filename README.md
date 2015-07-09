@@ -32,6 +32,7 @@ Full-page demo: http://s.codepen.io/nikolaygit/debug/oXegzM
 
 * :white_check_mark: Move the codepen into the Git repo.
 * Create online editable version.
+* Add the option to create automatically the invoice number.
 * Iterate according to own and friends needs.
 
 ## Learn
