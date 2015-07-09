@@ -15,14 +15,46 @@ loadJSON(invoiceJsonUrl, function(result) {
   if (isInvoiceValid) {
     var positions = invoiceJson.invoice.positions;
 
-    var positionsSum = _.reduce(positions, function(sum, position) {
-      return sum.add(Big(position.totalPrice));
-    }, Big(0));
+    // calculate id and totalPrice
+    positions.forEach(function(position, index){
+      position.id = index + 1;
 
-    var priceNetto = positionsSum;
-    var priceMwSt = mwst(positionsSum);
-    var priceBrutto = positionsSum.add(priceMwSt);
+      if (!position.unitPrice && position.unitPriceGross) {
 
+        // use the tax rate of the position
+        var taxRate = fin.taxRate;
+        if (position.unitPriceVat) {
+          fin.taxRate = position.unitPriceVat;
+        }
+
+        position.unitPrice = fin.net(position.unitPriceGross);
+
+        // set back to the previous tax rate
+        if (position.unitPriceVat) {
+          fin.taxRate = taxRate;
+        }
+      }
+      position.totalPrice = fin(position.count * position.unitPrice);
+    });
+
+    // calculate the total net, VAT and gross
+    var priceNetto = _.reduce(positions, function(sum, position) {
+      return fin(sum + position.totalPrice);
+    }, 0);
+
+    var priceMwSt = fin.vat(priceNetto);
+    var priceBrutto = fin(priceNetto + priceMwSt);
+
+    // validate the total net, VAT and gross
+    var netVatGrossArr = [priceNetto, priceMwSt, priceBrutto];
+    var isNetVatGrossValid = fin.validateNetVatGross(netVatGrossArr);
+    if (!isNetVatGrossValid) {
+      var errorMessage = 'The calculation of net, VAT, gross is not valid!';
+      console.error(errorMessage, netVatGrossArr);
+      throw new Error(errorMessage, netVatGrossArr);
+    }
+
+    // format the total net, VAT and gross
     var numberOfDigits = 2;
     invoiceJson.invoice.priceNetto = parseFloat(priceNetto).toFixed(numberOfDigits);
     invoiceJson.invoice.priceMwSt = parseFloat(priceMwSt).toFixed(numberOfDigits);
@@ -68,10 +100,4 @@ function validateInvoice(invoice) {
   } else {
     return true;
   }
-}
-
-function mwst(bigNumber) {
-  var percentage = 19;
-  var numberOfDigits = 2;
-  return bigNumber.times(percentage).div(100).round(numberOfDigits).toFixed(numberOfDigits);
 }

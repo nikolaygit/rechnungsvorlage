@@ -19,6 +19,7 @@
   "trailing": true,
   "smarttabs": true,
   "globals": {
-    "dust": false
+    "dust": false,
+    "fin": false
   }
 }

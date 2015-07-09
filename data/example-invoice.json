@@ -34,12 +34,17 @@
     "textAfter": "Bitte überweisen Sie den Rechnungsbetrag ohne Abzüge unter Angabe der Rechnungsnummer auf das angegebene Bankkonto.",
     "positions": [
       {
-        "id": 1,
         "description": "Bezeichnung",
-        "count": "80.75",
+        "count": 80.75,
         "countType": "Std.",
-        "unitPrice": "60",
-        "totalPrice": "4845.00"
+        "unitPrice": 60
+      },
+      {
+        "description": "Reisekosten VBB-Monatskarte",
+        "count": 1,
+        "countType": "Stück",
+        "unitPriceGross": 79.50,
+        "unitPriceVat": 7
       }
     ]
   }

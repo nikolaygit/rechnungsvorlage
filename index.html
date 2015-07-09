@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Rechnungsvorlage für Freiberufler / Selbständige</title>
   <link rel="stylesheet" href="style/style.css"/>
-  <script src="bower_components/big.js/big.min.js"></script>
+  <script src="node_modules/finjs/fin.js"></script>
   <script src="bower_components/lodash/lodash.min.js"></script>
   <script src="bower_components/dustjs-linkedin/dist/dust-full.min.js"></script>
 </head>
@@ -44,7 +44,7 @@
 
     <section class="invoice-meta">
       <div class="floatr">
-        <div>Ausstellungsdatum: {invoiceDate}</div>
+        <div>Rechnungsdatum: {invoiceDate}</div>
       </div>
       <div class="floatl">
         <div>
@@ -65,8 +65,8 @@
         <div class="table-header table-col-2">Beschreibung</div>
         <div class="table-header table-col-3">Menge</div>
         <div class="table-header table-col-4">Einheit</div>
-        <div class="table-header table-col-5">Einzelpreis</div>
-        <div class="table-header table-col-6">Gesamtpreis</div>
+        <div class="table-header table-col-5">Einzelpreis<br/>(netto)</div>
+        <div class="table-header table-col-6">Gesamtpreis<br/>(netto)</div>
       </div>
       {#positions}
       <div class="table-row">
@@ -79,7 +79,7 @@
       </div>
       {/positions}
       <div class="table-row one-row-top">
-        <div class="table-col-12345">Zwischensumme</div>
+        <div class="table-col-12345">Zwischensumme (netto)</div>
         <div class="table-col-6">{priceNetto|deCurrency}</div>
       </div>
       <div class="table-row">
