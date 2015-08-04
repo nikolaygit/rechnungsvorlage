@@ -41,6 +41,8 @@ Sie können sich hier mehr über Rechnungen informieren: https://github.com/niko
 
 # History
 
+* 0.0.5
+    * Add ``unitPriceNetto`` for a position in the invoice
 * 0.0.3
     * Calculate VAT and gross amount automatically from the totalAmount of the given positions.
     * Run ``bower install`` automatically after ``npm i``. 

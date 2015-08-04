@@ -4,7 +4,7 @@
     "personName": "Nikolay Georgiev",
     "ustid": "DE123455677",
     "address": {
-      "streerNr": "MeineStraße. 15",
+      "streerNr": "MusterStr. 15",
       "place": "10969 Berlin"
     },
     "contacts": {
@@ -45,6 +45,12 @@
         "countType": "Stück",
         "unitPriceGross": 79.50,
         "unitPriceVat": 7
+      },
+      {
+        "description": "BrowserStack-Account",
+        "count": 1,
+        "countType": "Stück",
+        "unitPriceNetto": 35.66
       }
     ]
   }

@@ -19,20 +19,25 @@ loadJSON(invoiceJsonUrl, function(result) {
     positions.forEach(function(position, index){
       position.id = index + 1;
 
-      if (!position.unitPrice && position.unitPriceGross) {
+      if (!position.unitPrice) {
 
-        // use the tax rate of the position
-        var taxRate = fin.taxRate;
-        if (position.unitPriceVat) {
-          fin.taxRate = position.unitPriceVat;
+        if (position.unitPriceGross) {
+          // use the tax rate of the position
+          var taxRate = fin.taxRate;
+          if (position.unitPriceVat) {
+            fin.taxRate = position.unitPriceVat;
+          }
+
+          position.unitPrice = fin.net(position.unitPriceGross);
+
+          // set back to the previous tax rate
+          if (position.unitPriceVat) {
+            fin.taxRate = taxRate;
+          }
+        } else if (position.unitPriceNetto) {
+          position.unitPrice = position.unitPriceNetto;
         }
 
-        position.unitPrice = fin.net(position.unitPriceGross);
-
-        // set back to the previous tax rate
-        if (position.unitPriceVat) {
-          fin.taxRate = taxRate;
-        }
       }
       position.totalPrice = fin(position.count * position.unitPrice);
     });
